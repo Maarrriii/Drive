@@ -28,3 +28,10 @@ private final CANSparkMax leftLeader = new CANSparkMax(Ports.Drive.LEFT_LEADER, 
     leftLeader.set(leftSpeed);
     rightLeader.set(rightSpeed);
   }
+
+
+
+  public Command drive(DoubleSupplier vLeft, DoubleSupplier vRight) {
+    return run(() -> drive(vLeft.getAsDouble(), vRight.getAsDouble()));
+	  Drive drive = new Drive();
+  }
